@@ -1,4 +1,4 @@
-# Live View: https://yc-message.vercel.app
+# Live View: https://anonino.vercel.app
 
 # Anonymous Messaging Platform
 
