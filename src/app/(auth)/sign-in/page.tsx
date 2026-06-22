@@ -6,7 +6,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
 import { useToast } from "@/hooks/use-toast";
-import { useRouter } from "next/navigation";
+// import { useRouter } from "next/navigation";
 import {
   Form,
   FormControl,
@@ -25,7 +25,7 @@ const SignIn = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const { toast } = useToast();
-  const router = useRouter();
+  // const router = useRouter();
 
   //zod implementation
   const register = useForm<z.infer<typeof signInSchema>>({
@@ -45,6 +45,8 @@ const SignIn = () => {
     });
 
     if (result?.error) {
+      console.log(result.error);
+
       toast({
         title: "Sign in failed",
         description: "Please check your credentials",
@@ -54,8 +56,13 @@ const SignIn = () => {
     }
 
     if (result?.ok) {
-      router.replace("/dashboard");
-      setIsSubmitting(false);
+      toast({
+        title: "Success",
+        description: "Logged in successfully",
+      });
+
+      window.location.replace("/dashboard");
+      return;
     }
   };
 

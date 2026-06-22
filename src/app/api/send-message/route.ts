@@ -15,7 +15,7 @@ export async function POST(request: Request) {
           success: false,
           message: "User not found",
         },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -26,7 +26,7 @@ export async function POST(request: Request) {
           success: false,
           message: "User not accepting messages",
         },
-        { status: 403 }
+        { status: 403 },
       );
     }
 
@@ -38,7 +38,7 @@ export async function POST(request: Request) {
         success: true,
         message: "Message sent successfully",
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (err) {
     console.log("Error adding messages", err);
@@ -48,7 +48,7 @@ export async function POST(request: Request) {
         success: false,
         message: "Internal server error",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

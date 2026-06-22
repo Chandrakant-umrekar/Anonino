@@ -23,7 +23,9 @@ const Dashboard = () => {
   const { toast } = useToast();
 
   const handleDeleteMessage = async (messageId: string) => {
-    setMessages(messages.filter((message) => message._id !== messageId));
+    setMessages(
+      messages.filter((message) => String(message._id) !== messageId),
+    );
   };
 
   const { data: session } = useSession();
@@ -40,7 +42,7 @@ const Dashboard = () => {
     setIsSwitchLoading(true);
     try {
       const response = await axios.get<ApiResponse>("/api/accept-messages");
-      setValue("acceptMessages", response.data.isAcceptingMessages);
+      setValue("acceptMessages", response.data.isAcceptingMessages ?? true);
     } catch (err) {
       const axiosError = err as AxiosError<ApiResponse>;
       toast({
@@ -52,7 +54,7 @@ const Dashboard = () => {
     } finally {
       setIsSwitchLoading(false);
     }
-  }, [setValue]);
+  }, [setValue, toast]);
 
   const fetchMessages = useCallback(
     async (refresh: boolean = false) => {
@@ -80,7 +82,7 @@ const Dashboard = () => {
         setIsSwitchLoading(false);
       }
     },
-    [setIsLoading, setMessages, toast]
+    [setIsLoading, setMessages, toast],
   );
 
   useEffect(() => {
@@ -197,7 +199,7 @@ const Dashboard = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
               {messages.length > 0 ? (
                 messages.map((message) => (
-                  <div key={message._id as string}>
+                  <div key={String(message._id)}>
                     <MessageCard
                       message={message}
                       onMessageDelete={handleDeleteMessage}

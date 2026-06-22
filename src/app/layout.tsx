@@ -12,8 +12,8 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Yc Message",
-  description: "The anonymous messaging app",
+  title: "Anonino",
+  description: "The anonymous messaging app build by chandrakant umrekar",
   icons: {
     icon: "/favicon.ico",
   },
@@ -25,26 +25,24 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <link rel="icon" href="/favicon.ico" />
-
-      <AuthProvider>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
-          <body
-            className={`${outfit.className} antialiased bg-gradient-to-br from-[#fdfbfb] to-[#ebedee] dark:from-gray-900 dark:to-gray-800`}
+    <html lang="en" suppressHydrationWarning>
+      <body
+        className={`${outfit.className} antialiased bg-gradient-to-br from-[#fdfbfb] to-[#ebedee] dark:from-gray-900 dark:to-gray-800`}
+      >
+        <AuthProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
           >
             <Navbar />
             {children}
             <Toaster />
             <Footer />
-          </body>
-        </ThemeProvider>
-      </AuthProvider>
+          </ThemeProvider>
+        </AuthProvider>
+      </body>
     </html>
   );
 }

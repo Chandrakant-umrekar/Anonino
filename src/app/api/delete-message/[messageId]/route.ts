@@ -5,9 +5,9 @@ import { authOptions } from "../../auth/[...nextauth]/options";
 
 export async function DELETE(
   request: Request,
-  { params }: { params: { messageId: string } }
+  { params }: { params: Promise<{ messageId: string }> },
 ) {
-  const messageId = params.messageId;
+  const messageId = (await params).messageId;
   await dbConnect();
 
   const session = await getServerSession(authOptions);
@@ -16,20 +16,20 @@ export async function DELETE(
   if (!session || !user) {
     return Response.json(
       { success: false, message: "User not authenticated" },
-      { status: 401 }
+      { status: 401 },
     );
   }
 
   try {
     const updateResult = await UserModel.updateOne(
       { _id: user._id },
-      { $pull: { messages: { _id: messageId } } } //pulling = removing the message
+      { $pull: { messages: { _id: messageId } } }, //pulling = removing the message
     );
 
     if (updateResult.modifiedCount == 0) {
       return Response.json(
         { success: false, message: "Message not found or deleted already" },
-        { status: 404 }
+        { status: 404 },
       );
     }
 
@@ -38,7 +38,7 @@ export async function DELETE(
         success: true,
         message: "Message deleted",
       },
-      { status: 200 }
+      { status: 200 },
     );
   } catch (err) {
     console.log("Error in deleting message", err);
@@ -48,7 +48,7 @@ export async function DELETE(
         success: false,
         message: "Failed to delete message",
       },
-      { status: 500 }
+      { status: 500 },
     );
   }
 }

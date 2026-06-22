@@ -53,7 +53,10 @@ export default function SendMessage() {
     } catch (error) {
       const axiosError = error as AxiosError<ApiResponse>;
       toast({
-        title: "Error",
+        title:
+          axiosError.response?.data.message === "User not accepting messages"
+            ? "Not accepting"
+            : "Error",
         description:
           axiosError.response?.data.message ?? "Failed to send message",
         variant: "destructive",

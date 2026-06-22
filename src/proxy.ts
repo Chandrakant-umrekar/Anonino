@@ -1,7 +1,7 @@
 import { NextResponse, NextRequest } from "next/server";
 import { getToken } from "next-auth/jwt";
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const token = await getToken({ req: request });
   const url = request.nextUrl;
 
@@ -19,7 +19,7 @@ export async function middleware(request: NextRequest) {
   return NextResponse.next();
 }
 
-//Where to apply this middleware
+// Where to apply this middleware
 export const config = {
   matcher: ["/", "/sign-in", "/sign-up", "/dashboard", "/verify/:path*"],
 };

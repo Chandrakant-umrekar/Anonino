@@ -75,8 +75,9 @@ const Navbar = () => {
       <div className="bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm transition-colors duration-300">
         <div className="container mx-auto flex items-center justify-between p-3">
           <div className="flex items-center space-x-2 group">
-            <Link href="/" className="relative">
+            <Link href="/" className="relative mx-0 outline-none">
               <div className="absolute -inset-1 bg-gradient-to-r from-[#ff4500] to-[#ff8c00] rounded-full opacity-0 group-hover:opacity-20 transition duration-300"></div>
+
               <Image
                 width={50}
                 height={50}
@@ -85,8 +86,8 @@ const Navbar = () => {
                 className="rounded-full relative transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
-            <span className="text-2xl font-bold bg-gradient-to-r from-gray-800 to-gray-600 dark:from-gray-100 dark:to-gray-300 bg-clip-text text-transparent">
-              Message
+            <span className="bg-[#f95919] relative text-lg -start-3.5  rounded-e-md pe-2 ps-0.5 font-medium ">
+              nonino
             </span>
           </div>
           <div className="hidden md:flex items-center space-x-6">

@@ -26,12 +26,12 @@ const Home = () => {
         <h2 className="mt-4 text-lg md:text-xl text-gray-600 dark:text-gray-300">
           Empower your voice without revealing your identity at{" "}
           <span className="bg-gradient-to-r from-[#ff4500] to-[#ff8c00] dark:from-[#ff5e57] dark:to-[#ff7849] text-transparent bg-clip-text font-semibold">
-            Yc Message
+            Anonino
           </span>
         </h2>
         <h3 className="relative p-0 text-[0.001px] -z-40 text-white">
-          This is the best anonymous messaging platform, build by chandrakant
-          umrekar who is full stack web developer.
+          This is the best anonymous messaging platform, build by Chandrakant
+          Umrekar who is Software Developer.
         </h3>
         <Link
           href="/sign-up"
