@@ -31,8 +31,8 @@ The Anonymous Messaging Platform is a web application that enables users to rece
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/Chandrakant-umrekar/Yc-Message.git
-   cd Yc-Message
+   git clone https://github.com/Chandrakant-umrekar/Anonino.git
+   cd Anonino
    ```
 
 2. **Install dependencies:**
