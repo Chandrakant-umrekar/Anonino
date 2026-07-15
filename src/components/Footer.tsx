@@ -1,12 +1,7 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-} from "react-icons/fa";
+import { FaTwitter, FaLinkedinIn } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -27,20 +22,11 @@ const Footer = () => {
           <div className="flex space-x-6 mt-4 md:mt-0">
             {[
               {
-                icon: FaFacebookF,
-                href: "https://facebook.com",
-                name: "facebook",
-              },
-              {
                 icon: FaTwitter,
                 href: "https://x.com/Chandrakant_0w",
                 name: "twitter",
               },
-              {
-                icon: FaInstagram,
-                href: "https://instagram.com",
-                name: "instagram",
-              },
+
               {
                 icon: FaLinkedinIn,
                 href: "https://www.linkedin.com/in/chandrakant-umrekar-141bb932b/",

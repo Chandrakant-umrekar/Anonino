@@ -146,12 +146,12 @@ const Dashboard = () => {
               <h2 className="text-base sm:text-lg font-semibold mb-3">
                 Copy Your Unique Link
               </h2>
-              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 sm:items-center">
+              <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 sm:items-center ">
                 <input
                   type="text"
                   value={profileUrl}
                   disabled
-                  className="w-full p-2 rounded dark:bg-gray-700 dark:text-gray-200 border border-gray-200 dark:border-gray-600"
+                  className="w-full p-2 rounded dark:bg-gray-700 dark: text-cyan-100 border border-gray-200 dark:border-gray-600"
                 />
                 <Button
                   onClick={copyToClipboard}
@@ -160,6 +160,9 @@ const Dashboard = () => {
                   <Copy />
                   Copy
                 </Button>
+              </div>
+              <div className="m-1 ms-2">
+                <h3>Anyone can message you anonymously using this link</h3>
               </div>
             </div>
 
