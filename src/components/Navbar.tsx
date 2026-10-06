@@ -86,7 +86,7 @@ const Navbar = () => {
                 className="rounded-full relative transition-transform duration-300 group-hover:scale-105"
               />
             </Link>
-            <span className="bg-[#f95919] relative text-lg -start-3.5  rounded-e-md pe-2 ps-0.5 font-medium ">
+            <span className="bg-[#f95919] text-white relative text-lg -start-3.5  rounded-e-md pe-2 ps-0.5 font-medium ">
               nonino
             </span>
           </div>
