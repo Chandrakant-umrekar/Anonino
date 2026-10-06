@@ -151,7 +151,7 @@ const Dashboard = () => {
                   type="text"
                   value={profileUrl}
                   disabled
-                  className="w-full p-2 rounded dark:bg-gray-700 dark: text-cyan-100 border border-gray-200 dark:border-gray-600"
+                  className="w-full font-medium p-2 rounded dark:bg-gray-700 text-cyan-600 dark:text-cyan-100 border border-gray-200 dark:border-gray-600"
                 />
                 <Button
                   onClick={copyToClipboard}
