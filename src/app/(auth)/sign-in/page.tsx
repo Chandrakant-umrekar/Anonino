@@ -68,11 +68,6 @@ const SignIn = () => {
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100 dark:bg-gray-900">
       <div className="w-full max-w-md p-6 mx-2 md:px-6 md:py-3 space-y-6 bg-white dark:bg-gray-800 rounded-lg shadow-md">
-        <div className="dark:bg-zinc-800 text-slate-800 dark:text-slate-50 outline-dashed font-medium fixed top-20 right-32 p-2 rounded-lg">
-          <h3 className="font-bold underline">Dummy credentials:</h3>
-          <h4>username: dummy</h4>
-          <h4>password: 123456</h4>
-        </div>
         <div className="text-center">
           <h1 className="text-4xl font-extrabold tracking-tight lg:text-5xl mb-6">
             Join Yc Message
