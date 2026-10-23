@@ -2,6 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import Autoplay from "embla-carousel-autoplay";
+
+import { PiixPal } from "piixpal/react";
 import {
   ArrowRight,
   EyeOff,
@@ -93,12 +95,16 @@ const Home = () => {
 
           <h1 className="text-4xl font-extrabold leading-[1.1] tracking-tight text-gray-800 dark:text-gray-50 md:text-6xl">
             Discover the Power of{" "}
-            <span className={gradientText}>Anonymous</span> Feedback
+            <span className={gradientText}>
+              {" "}
+              <PiixPal pal="pinch" /> Anonymous
+            </span>{" "}
+            Feedback
           </h1>
 
           <h2 className="mx-auto mt-5 max-w-2xl text-lg text-gray-600 dark:text-gray-300 md:text-xl">
             Empower your voice without revealing your identity at{" "}
-            <span className={`${gradientText} font-semibold`}>Anonino</span>
+            <span className={`${gradientText} font-semibold`}></span>
           </h2>
 
           <p className="sr-only">
@@ -206,6 +212,7 @@ const Home = () => {
 
         {/* HOW IT WORKS */}
         <section className="mb-20 w-full max-w-5xl rounded-3xl border border-gray-200 bg-white/80 px-6 py-12 text-center shadow-xl backdrop-blur transition-all duration-300 hover:border-orange-300 dark:border-gray-700 dark:bg-gray-800/80 dark:shadow-gray-900/50 dark:hover:border-orange-500/50 md:px-10">
+          <PiixPal pal="fish" />
           <h2 className="mb-12 text-3xl font-bold text-gray-800 dark:text-gray-50 md:text-4xl">
             How to Use <span className={gradientText}>Anonino</span>
           </h2>
